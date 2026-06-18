@@ -1,6 +1,6 @@
 {
   "name": "signalk-x729",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Signal K plugin for the Geekworm X729 UPS (Raspberry Pi): publishes battery voltage/capacity and an AC power-loss notification",
   "main": "index.js",
   "scripts": { "test": "node -e \"require('./index.js'); console.log('load OK');\"" },
