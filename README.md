@@ -28,6 +28,22 @@ safe shutdown and fan control are handled by the Geekworm `powerloss` / `x729-pw
 - `i2c-tools` (`i2cget`) and `pinctrl` installed (both ship with current Raspberry Pi OS).
 - The Signal K user able to run `i2cget`/`pinctrl` and read the PWM sysfs. Tested on Raspberry Pi 5 / Bookworm.
 
+## Install
+Once published you can install it from the Signal K appstore. For development from a local
+checkout, install it as a dependency so it is **not** pruned from `node_modules`:
+
+```bash
+cd ~/.signalk
+npm install /path/to/signalk-x729   # adds a "file:" dependency and symlink
+```
+
+Then enable **Geekworm X729 UPS** in the Signal K plugin config and restart the server.
+
+> Note: install as a dependency (`npm install <path>`, i.e. a `file:` entry in
+> `~/.signalk/package.json`) rather than a bare `ln -s` into `node_modules`. A plain
+> symlink is "extraneous" to npm and gets removed the next time Signal K/npm prunes
+> `node_modules`, which silently disables the plugin.
+
 ## Configuration
 | Option | Default | Notes |
 |---|---|---|
